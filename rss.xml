@@ -1,123 +1,123 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Slineの小站 - </title><description>这里是 Sline 的个人博客，记录一些学习笔记和生活点滴。欢迎来到我的小站！</description><link>https://sline-l.github.io/</link><language>zh_CN</language><item><title>Firefly 简单使用指南</title><link>https://sline-l.github.io/posts/guide/</link><guid isPermaLink="true">https://sline-l.github.io/posts/guide/</guid><description>如何使用 Firefly 博客模板。</description><pubDate>Fri, 02 Jan 1970 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;这个博客模板是基于 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建的。对于本指南中未提及的内容，您可以在 &lt;a href=&quot;https://docs.astro.build/&quot;&gt;Astro 文档&lt;/a&gt; 中找到答案。&lt;/p&gt;
-&lt;h2&gt;文章的 Front-matter&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 我的第一篇博客文章
-published: 2023-09-09
-description: 这是我新 Astro 博客的第一篇文章。
-image: ./cover.jpg
-tags: [前端, 开发]
-category: 前端开发
-draft: true
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;属性&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章标题。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;published&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章发布日期。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;pinned&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;是否将此文章置顶在文章列表顶部。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;description&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章的简短描述。显示在首页上。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;image&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章封面图片路径。&amp;lt;br/&amp;gt;1. 以 &lt;code&gt;http://&lt;/code&gt; 或 &lt;code&gt;https://&lt;/code&gt; 开头：使用网络图片&amp;lt;br/&amp;gt;2. 以 &lt;code&gt;/&lt;/code&gt; 开头：&lt;code&gt;public&lt;/code&gt; 目录中的图片&amp;lt;br/&amp;gt;3. 不带任何前缀：相对于 markdown 文件的路径&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;tags&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章标签。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;category&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章分类。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;licenseName&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章内容的许可证名称。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;author&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章作者。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;sourceLink&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;文章内容的来源链接或参考。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;draft&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;如果这篇文章仍是草稿，则不会显示。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;slug&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;自定义文章 URL 路径。如果不设置，将使用文件名作为 URL。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2&gt;文章文件的放置位置&lt;/h2&gt;
-&lt;p&gt;您的文章文件应放置在 &lt;code&gt;src/content/posts/&lt;/code&gt; 目录中。您也可以创建子目录来更好地组织您的文章和资源。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;src/content/posts/
-├── post-1.md
-└── post-2/
-    ├── cover.png
-    └── index.md
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2&gt;自定义文章 URL (Slug)&lt;/h2&gt;
-&lt;h3&gt;什么是 Slug？&lt;/h3&gt;
-&lt;p&gt;Slug 是文章 URL 路径的自定义部分。如果不设置 slug，系统将使用文件名作为 URL。&lt;/p&gt;
-&lt;h3&gt;Slug 使用示例&lt;/h3&gt;
-&lt;h4&gt;示例 1：使用文件名作为 URL&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 我的第一篇博客文章
-published: 2023-09-09
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;
-URL：&lt;code&gt;/posts/my-first-blog-post&lt;/code&gt;&lt;/p&gt;
-&lt;h4&gt;示例 2：自定义 Slug&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 我的第一篇博客文章
-published: 2023-09-09
-slug: hello-world
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;文件：&lt;code&gt;src/content/posts/my-first-blog-post.md&lt;/code&gt;
-URL：&lt;code&gt;/posts/hello-world&lt;/code&gt;&lt;/p&gt;
-&lt;h4&gt;示例 3：中文标题使用英文 Slug&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: 如何使用 Firefly 博客主题
-published: 2023-09-09
-slug: how-to-use-firefly-blog-theme
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;文件：&lt;code&gt;src/content/posts/firefly-guide.md&lt;/code&gt;
-URL：&lt;code&gt;/posts/how-to-use-firefly-blog-theme&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Slug 使用建议&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;使用英文和连字符&lt;/strong&gt;：&lt;code&gt;my-awesome-post&lt;/code&gt; 而不是 &lt;code&gt;my awesome post&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保持简洁&lt;/strong&gt;：避免过长的 slug&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;具有描述性&lt;/strong&gt;：让 URL 能够反映文章内容&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;避免特殊字符&lt;/strong&gt;：只使用字母、数字和连字符&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;保持一致性&lt;/strong&gt;：在整个博客中使用相似的命名模式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3&gt;注意事项&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Slug 一旦设置并发布，建议不要随意更改，以免影响 SEO 和已存在的链接&lt;/li&gt;
-&lt;li&gt;如果多个文章使用相同的 slug，后面的文章会覆盖前面的&lt;/li&gt;
-&lt;li&gt;Slug 会自动转换为小写&lt;/li&gt;
-&lt;/ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Slineの小站 - </title><description>这里是 Sline 的个人博客，记录一些学习笔记和生活点滴。欢迎来到我的小站！</description><link>https://sline-l.github.io/</link><language>zh_CN</language><item><title>Ordinary Differential Equation</title><link>https://sline-l.github.io/posts/classnotes/ordinary-differential-equation/</link><guid isPermaLink="true">https://sline-l.github.io/posts/classnotes/ordinary-differential-equation/</guid><description>Introduce some ordinary differential equations</description><pubDate>Mon, 08 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;First-Order ODE&lt;/h2&gt;
+&lt;h4&gt;Separable Equation&lt;/h4&gt;
+&lt;p&gt;For a first-order differential equation of separable variables:&lt;/p&gt;
+&lt;p&gt;$$
+M\left( {x} \right)dx + N\left( {y} \right)dy = 0
+$$&lt;/p&gt;
+&lt;p&gt;Intergrate both ends&lt;/p&gt;
+&lt;p&gt;$$
+\int {M\left( x \right)dx}  + \int {N \left( y \right)dy}  = C
+$$&lt;/p&gt;
+&lt;h4&gt;Homogeneous Equation&lt;/h4&gt;
+&lt;p&gt;For a homogeneous equation&lt;/p&gt;
+&lt;p&gt;$$
+\frac{{dy}}{{dx}} = f\left( {x,y} \right)
+$$&lt;/p&gt;
+&lt;p&gt;$$
+f\left( {tx,ty} \right) = f\left( {x,y} \right)
+$$&lt;/p&gt;
+&lt;p&gt;We let $y=xv$ ，$v=v(x)$, so&lt;/p&gt;
+&lt;p&gt;$$
+\frac{{dy}}{{dx}} = v + x\frac{{dv}}{{dx}}
+$$&lt;/p&gt;
+&lt;p&gt;Also, we can solve&lt;/p&gt;
+&lt;p&gt;$$
+\frac{{dx}}{{dy}} = \frac{1}{{f\left( {x,y} \right)}}
+$$&lt;/p&gt;
+&lt;p&gt;Let $x=yu$&lt;/p&gt;
+&lt;p&gt;$$
+\frac{{dx}}{{dy}} = u + y\frac{{du}}{{dy}}
+$$&lt;/p&gt;
+&lt;p&gt;By simplifying, we can have separable equation.&lt;/p&gt;
+&lt;h4&gt;Exact Equation&lt;/h4&gt;
+&lt;p&gt;For a equation like&lt;/p&gt;
+&lt;p&gt;$$
+M(x,y)dx+N(x,y)dy=0
+$$&lt;/p&gt;
+&lt;p&gt;If there exists a function that satisfies&lt;/p&gt;
+&lt;p&gt;$$
+dg(x,y)=M(x,y)dx+N(x,y)dy
+$$&lt;/p&gt;
+&lt;p&gt;We call it exact equation.&lt;/p&gt;
+&lt;p&gt;ps. If $g(x,y)$ exists, it satisfies&lt;/p&gt;
+&lt;p&gt;$$
+\frac{ \partial M(x,y) }{ \partial y } =\frac{ \partial N(x,y) }{ \partial x }
+$$&lt;/p&gt;
+&lt;p&gt;There exists $g(x, y)$ that satisfie：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+\frac{{\partial g\left( {x,y} \right)}}{{\partial x}} = M\left( {x,y} \right)\ \frac{{\partial g\left( {x,y} \right)}}{{\partial y}} = N\left( {x,y} \right) \
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;For&lt;/p&gt;
+&lt;p&gt;$$
+M\left( {x,y} \right)dx + N\left( {x,y} \right)dy = 0
+$$&lt;/p&gt;
+&lt;p&gt;Thus&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+dg\left( {x,y\left( x \right)} \right)  &amp;amp; = 0 \   \int {dg\left( {x,y\left( x \right)} \right)}   &amp;amp; = \int {0dx}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;We can get&lt;/p&gt;
+&lt;p&gt;$$
+g\left( {x,y} \right) = C
+$$&lt;/p&gt;
+&lt;h4&gt;Linear Equation&lt;/h4&gt;
+&lt;p&gt;For a first-order equation&lt;/p&gt;
+&lt;p&gt;$$
+y&apos;+p(x)y=q(x)
+$$&lt;/p&gt;
+&lt;p&gt;First&lt;/p&gt;
+&lt;p&gt;$$
+[p(x)y-q(x)]dx+dy=0
+$$&lt;/p&gt;
+&lt;p&gt;We will try to change it to exact equation&lt;/p&gt;
+&lt;p&gt;$$
+I(x)[p(x)y-q(x)]dx+I(x)dy=0
+$$&lt;/p&gt;
+&lt;p&gt;Because&lt;/p&gt;
+&lt;p&gt;$$
+\frac{ \partial I(x)[p(x)y-q(x)] }{ \partial y } =\frac{ \partial I(x) }{ \partial x }
+$$&lt;/p&gt;
+&lt;p&gt;Let&lt;/p&gt;
+&lt;p&gt;$$
+I\left( x \right) = {e^{\int {p\left( x \right)dx} }}
+$$&lt;/p&gt;
+&lt;p&gt;Muitioy on both sides&lt;/p&gt;
+&lt;p&gt;$$
+I\left( x \right)y&apos; + p\left( x \right)I\left( x \right)y = I\left( x \right)q\left( x \right)
+$$&lt;/p&gt;
+&lt;p&gt;We can discover&lt;/p&gt;
+&lt;p&gt;$$
+I(x)y&apos;+p(x)I(x)y=\frac{d}{dx} (I(x)y(x))
+$$&lt;/p&gt;
+&lt;p&gt;So&lt;/p&gt;
+&lt;p&gt;$$
+\begin{align}
+&amp;amp; \frac{d}{dx} (I(x)y)  =I(x)q(x) \
+&amp;amp; I(x)y  =\int I(\tau)q(\tau)d\tau+C \
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;Finally&lt;/p&gt;
+&lt;p&gt;$$
+y  =\frac{1}{I(x)}\int I(\tau)q(\tau)d\tau+C
+$$&lt;/p&gt;
+&lt;h4&gt;Bernoulli‍ Equation&lt;/h4&gt;
+&lt;p&gt;For a fitst-order equation&lt;/p&gt;
+&lt;p&gt;$$
+\frac{dy}{dx} + P(x)y = Q(x)y^n&lt;/p&gt;
+&lt;p&gt;$$&lt;/p&gt;
+&lt;h2&gt;Second-Order ODE&lt;/h2&gt;
+&lt;h3&gt;Others&lt;/h3&gt;
+&lt;h4&gt;Euler-Cauchy Equation&lt;/h4&gt;
+&lt;p&gt;For a equation like&lt;/p&gt;
+&lt;p&gt;$$
+ax^2y&apos;&apos;+bxy&apos;+cy=0
+$$&lt;/p&gt;
+&lt;h4&gt;Sturm-Liouville Equation&lt;/h4&gt;
+&lt;p&gt;For a equation like&lt;/p&gt;
+&lt;p&gt;$$
+\frac{d}{dx} \left[ p(x) \frac{dy}{dx} \right] + q(x)y + \lambda r(x)y = 0
+$$&lt;/p&gt;
 </content:encoded></item></channel></rss>
