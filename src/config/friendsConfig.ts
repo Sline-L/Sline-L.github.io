@@ -4,25 +4,25 @@ import type { FriendLink } from "../types/config";
 
 // 友链配置
 export const friendsConfig: FriendLink[] = [
-  {
-    title: "夏叶博客",
-    imgurl:
-      "https://q.qlogo.cn/headimg_dl?dst_uin=7618557&spec=640&img_type=jpg",
-    desc: "总有一场相遇，是互相喜欢的！",
-    siteurl: "https://www.cuteleaf.cn",
-    tags: ["Blog"],
-    weight: 10, // 权重，数字越大排序越靠前
-    enabled: true, // 是否启用
-  },
-  {
-    title: "Firefly",
-    imgurl: "https://docs-firefly.cuteleaf.cn/logo.png",
-    desc: "Firefly 一款清新美观的 Astro 博客主题模板",
-    siteurl: "https://github.com/CuteLeaf/Firefly",
-    tags: ["GitHub", "Theme"],
-    weight: 9,
-    enabled: true,
-  },
+	{
+		title: "夏叶博客",
+		imgurl:
+			"https://q.qlogo.cn/headimg_dl?dst_uin=7618557&spec=640&img_type=jpg",
+		desc: "总有一场相遇，是互相喜欢的！",
+		siteurl: "https://www.cuteleaf.cn",
+		tags: ["Blog"],
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},
+	{
+		title: "Firefly",
+		imgurl: "https://docs-firefly.cuteleaf.cn/logo.png",
+		desc: "Firefly 一款清新美观的 Astro 博客主题模板",
+		siteurl: "https://github.com/CuteLeaf/Firefly",
+		tags: ["GitHub", "Theme"],
+		weight: 9,
+		enabled: true,
+	},
 ];
 
 // 获取启用的友链并按权重排序

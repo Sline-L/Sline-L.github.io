@@ -1,3 +1,4 @@
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
@@ -16,19 +17,18 @@ import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-di
 import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
 import { expressiveCodeConfig, siteConfig } from "./src/config";
+import searchIndexer from "./src/integrations/searchIndex.mts";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 import { pluginLanguageBadge } from "./src/plugins/expressive-code/language-badge.ts";
 import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
 import { GithubCardComponent } from "./src/plugins/rehype-component-github-card.mjs";
+import rehypeEmailProtection from "./src/plugins/rehype-email-protection.mjs";
+import rehypeFigure from "./src/plugins/rehype-figure.mjs";
 import { rehypeMermaid } from "./src/plugins/rehype-mermaid.mjs";
 import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
-import mdx from "@astrojs/mdx";
-import searchIndexer from "./src/integrations/searchIndex.mts";
-import rehypeEmailProtection from "./src/plugins/rehype-email-protection.mjs";
-import rehypeFigure from "./src/plugins/rehype-figure.mjs";
 
 // https://astro.build/config
 export default defineConfig({

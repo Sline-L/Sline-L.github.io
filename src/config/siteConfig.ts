@@ -11,14 +11,7 @@ export const siteConfig: SiteConfig = {
 	site_url: "https://Sline-L.github.io",
 	description:
 		"这里是 Sline 的个人博客，记录一些学习笔记和生活点滴。欢迎来到我的小站！",
-	keywords: [
-		"Fuwari",
-		"Astro",
-		"ACGN",
-		"博客",
-		"技术博客",
-		"静态博客",
-	],
+	keywords: ["Fuwari", "Astro", "ACGN", "博客", "技术博客", "静态博客"],
 
 	lang: SITE_LANG,
 
@@ -115,7 +108,7 @@ export const siteConfig: SiteConfig = {
 				title: "",
 				// 主页横幅副标题
 				subtitle: [
-					"Welcome to Sline's Site",    // 向无垠天际去，我自由流淌
+					"Welcome to Sline's Site", // 向无垠天际去，我自由流淌
 				],
 				typewriter: {
 					//打字机开启 → 循环显示所有副标题

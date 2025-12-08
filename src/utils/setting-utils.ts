@@ -53,30 +53,30 @@ export function resolveTheme(theme: LIGHT_DARK_MODE): LIGHT_DARK_MODE {
 }
 
 export function getHue(): number {
-    // 1. 先做最基础的环境检查：如果没有 window，肯定是服务端
-    if (typeof window === 'undefined') {
-        return getDefaultHue();
-    }
+	// 1. 先做最基础的环境检查：如果没有 window，肯定是服务端
+	if (typeof window === "undefined") {
+		return getDefaultHue();
+	}
 
-    // 2. 检查 localStorage 是否存在，且 getItem 是否真的是个函数
-    try {
-        if (
-            typeof localStorage !== 'undefined' && 
-            localStorage !== null && 
-            typeof localStorage.getItem === 'function' // 关键检查点
-        ) {
-            const stored = localStorage.getItem("hue");
-            // 顺便加上 NaN 检查
-            const parsed = stored ? Number.parseInt(stored, 10) : NaN;
-            return Number.isNaN(parsed) ? getDefaultHue() : parsed;
-        }
-    } catch (e) {
-        // 在某些浏览器隐私模式下，访问 localStorage 可能会直接报错，这里捕获它
-        console.warn('Unable to access localStorage:', e);
-    }
+	// 2. 检查 localStorage 是否存在，且 getItem 是否真的是个函数
+	try {
+		if (
+			typeof localStorage !== "undefined" &&
+			localStorage !== null &&
+			typeof localStorage.getItem === "function" // 关键检查点
+		) {
+			const stored = localStorage.getItem("hue");
+			// 顺便加上 NaN 检查
+			const parsed = stored ? Number.parseInt(stored, 10) : Number.NaN;
+			return Number.isNaN(parsed) ? getDefaultHue() : parsed;
+		}
+	} catch (e) {
+		// 在某些浏览器隐私模式下，访问 localStorage 可能会直接报错，这里捕获它
+		console.warn("Unable to access localStorage:", e);
+	}
 
-    // 3. 任何失败情况都回退到默认值
-    return getDefaultHue();
+	// 3. 任何失败情况都回退到默认值
+	return getDefaultHue();
 }
 
 export function setHue(hue: number): void {
