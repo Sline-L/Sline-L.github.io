@@ -29,7 +29,7 @@
 如果你想和我交流技术问题，分享有趣的想法，或者只是想打个招呼，欢迎通过以下方式联系我：
 
 - 💻 **GitHub**: [Sline-L](https://github.com/Sline-L)
-- ✉️ **Email**: [glx15424872@163.com](glx15424872@163.com)
+- ✉️ **Email**: [glx15424872@163.com](mailto:glx15424872@163.com)
 
 ---
 

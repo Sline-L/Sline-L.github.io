@@ -1,9 +1,10 @@
 ---
 title: Ordinary Differential Equation
+date: 2025-10-12
 published: 2025-12-08
 pinned: false
 description: "Introduce some ordinary differential equations"
-tags: ["ODE", "数学物理方法", "ClassNote"]
+tags: ["ODE", "Mathematics", "ClassNotes"]
 category: ClassNotes
 draft: false
 ---
