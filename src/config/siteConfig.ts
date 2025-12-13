@@ -9,8 +9,7 @@ export const siteConfig: SiteConfig = {
 	title: "Slineの小站",
 	subtitle: "",
 	site_url: "https://Sline-L.github.io",
-	description:
-		"Weaving logic on silicon, capturing light in time",
+	description: "Weaving logic on silicon, capturing light in time",
 	keywords: ["Blog", "IC", "技术博客", "Study", "Photography"],
 
 	lang: SITE_LANG,
