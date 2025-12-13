@@ -38,6 +38,7 @@
 &lt;hr /&gt;
 &lt;p&gt;&lt;em&gt;Let&apos;s start the journey.&lt;/em&gt;&lt;/p&gt;
 </content:encoded></item><item><title>ChartGenius：我的第一个网页小工具</title><link>https://sline-l.github.io/posts/portfolio/chart-genius/</link><guid isPermaLink="true">https://sline-l.github.io/posts/portfolio/chart-genius/</guid><description>关于这个网站的由来、技术架构以及我在这里想要记录的一切。</description><pubDate>Sat, 13 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;嗨！今天想和大家分享我做的第一个网页端小工具——&lt;strong&gt;ChartGenius&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;工具的入口为：&lt;a href=&quot;https://chart-genius-sooty.vercel.app/&quot;&gt;ChartGenius&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;为什么会做这个工具？&lt;/h2&gt;
 &lt;p&gt;做 ChartGenius 的想法其实源于一个很实际的需求：写实验报告和做课程展示时，我经常需要画各种图表。虽然市面上已经有很多画图工具了，但使用起来要么太复杂（学习成本高），要么美观度不够（配色看着就很&quot;理工直男&quot;），要么就是需要付费才能导出高质量图片。&lt;/p&gt;
 &lt;p&gt;我就在想，能不能做一个简单、快速、好看的图表生成器？最好是打开网页就能用，不需要安装任何软件，也不需要复杂的操作。于是，ChartGenius 就诞生了。&lt;/p&gt;
