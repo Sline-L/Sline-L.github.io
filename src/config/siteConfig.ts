@@ -10,8 +10,8 @@ export const siteConfig: SiteConfig = {
 	subtitle: "",
 	site_url: "https://Sline-L.github.io",
 	description:
-		"这里是 Sline 的个人博客，记录一些学习笔记和生活点滴。欢迎来到我的小站！",
-	keywords: ["Fuwari", "Astro", "ACGN", "博客", "技术博客", "静态博客"],
+		"Weaving logic on silicon, capturing light in time",
+	keywords: ["Blog", "IC", "技术博客", "Study", "Photography"],
 
 	lang: SITE_LANG,
 
@@ -24,7 +24,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// 留空以使用默认 favicon
 		{
-			src: "/assets/images/favicon.ico", // 图标文件路径
+			src: "/assets/images/Slineico.svg", // 图标文件路径
 			theme: "light", // 可选，指定主题 'light' | 'dark'
 			sizes: "32x32", // 可选，图标大小
 		},
@@ -37,7 +37,7 @@ export const siteConfig: SiteConfig = {
 	// { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
 	navbarLogo: {
 		type: "image",
-		value: "/assets/images/LiuYingPure3.svg",
+		value: "/assets/images/Sline.svg",
 		alt: "🍀",
 	},
 	navbarTitle: "Sline", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
@@ -91,7 +91,7 @@ export const siteConfig: SiteConfig = {
 			// 桌面背景图片
 			desktop: "/assets/images/d1.webp",
 			// 移动背景图片
-			mobile: "/assets/images/m4.jpg",
+			mobile: "/assets/images/m2.wedp",
 		},
 
 		// Banner模式特有配置

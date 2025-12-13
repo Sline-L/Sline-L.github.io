@@ -9,8 +9,6 @@ category: ClassNotes
 draft: false
 ---
 
-## First-Order ODE
-
 #### Separable Equation
 
 For a first-order differential equation of separable variables:

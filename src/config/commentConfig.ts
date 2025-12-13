@@ -6,7 +6,7 @@ export const commentConfig: CommentConfig = {
 
 	//twikoo评论系统配置
 	twikoo: {
-		envId: "https://twikoo.vercel.app",
+		envId: "https://sline-l.github.io",
 		lang: "zh-CN", // 设置 Twikoo 评论系统语言
 		visitorCount: true, // 文章访问量统计功能。
 	},
