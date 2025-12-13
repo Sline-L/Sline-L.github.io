@@ -90,7 +90,7 @@ export const siteConfig: SiteConfig = {
 			// 桌面背景图片
 			desktop: "/assets/images/d1.webp",
 			// 移动背景图片
-			mobile: "/assets/images/m2.wedp",
+			mobile: "/assets/images/m2.webp",
 		},
 
 		// Banner模式特有配置
