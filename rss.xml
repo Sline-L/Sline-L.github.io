@@ -1,254 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Slineの小站 - </title><description>Weaving logic on silicon, capturing light in time</description><link>https://sline-l.github.io/</link><language>zh_CN</language><item><title>Hello World：Sline小站的第一篇博客</title><link>https://sline-l.github.io/posts/helloworld/</link><guid isPermaLink="true">https://sline-l.github.io/posts/helloworld/</guid><description>关于这个网站的由来、技术架构以及我在这里想要记录的一切。</description><pubDate>Sat, 13 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;写在最前面&lt;/h2&gt;
-&lt;p&gt;如果你看到这篇文章，说明这个小站终于上线了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Hello World.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这是程序员最熟悉的开场白，也是这个独立博客诞生的第一声啼鸣。&lt;/p&gt;
-&lt;p&gt;作为一名集成电路专业的大二学生，我常在想，在算法推荐和碎片化信息洪流的当下，是否还存在一个安静的角落，能让我完整地梳理知识、沉淀思考？于是，利用课余时间，我折腾出了这个基于 &lt;strong&gt;Astro&lt;/strong&gt; 的个人站点。&lt;/p&gt;
-&lt;h2&gt;为什么要做这个网站&lt;/h2&gt;
-&lt;p&gt;老实说，起初只是觉得&quot;有个自己的网站&quot;这件事很酷。但真正动手之后，我发现自己确实需要这样一个地方：&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Slineの小站 - </title><description>Weaving logic on silicon, capturing light in time</description><link>https://sline-l.github.io/</link><language>zh_CN</language><item><title>Hello, World：写在小站启程时</title><link>https://sline-l.github.io/posts/essays/hello-world/</link><guid isPermaLink="true">https://sline-l.github.io/posts/essays/hello-world/</guid><description>关于这座个人小站的由来、内容规划，以及我为什么选择在这里持续记录。</description><pubDate>Sat, 13 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;写在最前面&lt;/h2&gt;
+&lt;p&gt;如果你看到这篇文章，说明这个小站已经正式上线了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hello, World.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是程序员最熟悉的开场白，也是我为这片个人空间写下的第一句话。&lt;/p&gt;
+&lt;p&gt;作为一名集成电路专业的学生，我常常需要在公式、代码、电路图和实验记录之间来回切换。知识不断增加，笔记却散落在思源笔记、Obsidian、本地 Markdown 和纸张上；一些当时觉得重要的想法，也很容易在下一次忙碌到来时被忘记。&lt;/p&gt;
+&lt;p&gt;于是，我搭建了这个基于 &lt;strong&gt;Astro&lt;/strong&gt; 的个人网站，希望给学习和生活留下一条能够回望的轨迹。&lt;/p&gt;
+&lt;h2&gt;为什么建立这个网站&lt;/h2&gt;
+&lt;p&gt;起初，我只是觉得拥有一个自己的网站很有趣。真正开始整理内容后，它逐渐有了更明确的意义：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;知识太容易忘了&lt;/strong&gt;。上学期学的模电公式，这学期再看已经陌生得像从没见过。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;笔记散落各处&lt;/strong&gt;。OneNote、Notion、本地Markdown、甚至手写纸质笔记……找起来太痛苦。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;想法需要沉淀&lt;/strong&gt;。读完一篇论文、做完一个实验，如果不写下来，过两天就只剩&quot;好像挺有意思&quot;的模糊印象。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;成果值得展示&lt;/strong&gt;。辛辛苦苦写的代码、调的电路，不能就这么躺在硬盘里吃灰。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;整理知识&lt;/strong&gt;：把课程中的推导、概念和易错点写成能够重新读懂的笔记。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;记录实践&lt;/strong&gt;：留下环境配置、工具使用和调试过程，减少重复踩坑。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;复盘项目&lt;/strong&gt;：不仅展示结果，也记录选择方案、验证假设和解决问题的过程。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;保存观察&lt;/strong&gt;：为论文、行业变化以及生活中的片段留出完整表达的空间。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;所以这个网站，&lt;strong&gt;既是知识库，也是作品集，更是我和未来自己的对话&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;这里不会追求更新频率，也不打算把所有内容都包装成标准答案。比起即时发布，我更希望每篇文章都能在未来某一天继续派上用场。&lt;/p&gt;
 &lt;h2&gt;关于这个网站&lt;/h2&gt;
-&lt;p&gt;这个博客的搭建并非从零开始，而是站在了巨人的肩膀上。&lt;/p&gt;
-&lt;p&gt;网站的核心框架采用 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; ，选择它是因为极其轻量、高性能，且对内容驱动型网站非常友好。网站的设计参考了 GitHub 上的开源项目 &lt;a href=&quot;https://github.com/CuteLeaf/Firefly&quot;&gt;Firefly&lt;/a&gt; 与 &lt;a href=&quot;https://github.com/saicaca/fuwari&quot;&gt;fuwari&lt;/a&gt; 。我喜欢它们流畅的动效与清爽的 UI，并在此基础上根据我的个人审美进行了定制化改造。&lt;/p&gt;
+&lt;p&gt;网站使用 &lt;a href=&quot;https://astro.build/&quot;&gt;Astro&lt;/a&gt; 构建，并参考了开源项目 &lt;a href=&quot;https://github.com/CuteLeaf/Firefly&quot;&gt;Firefly&lt;/a&gt; 与 &lt;a href=&quot;https://github.com/saicaca/fuwari&quot;&gt;Fuwari&lt;/a&gt; 的设计和实现。我在此基础上调整了视觉风格、内容结构与部分交互，让它更适合作为个人知识库、项目档案和生活记录。&lt;/p&gt;
+&lt;p&gt;技术只是承载内容的工具。这个网站真正重要的部分，仍然是之后逐渐积累下来的文字、作品与思考。&lt;/p&gt;
 &lt;h2&gt;这里会有什么&lt;/h2&gt;
-&lt;p&gt;为了防止这里变成杂草丛生的荒地，我给网站规划了几个板块，基本覆盖了我学习和生活的主要方向：&lt;/p&gt;
-&lt;h3&gt;核心理论 (Core Theory)&lt;/h3&gt;
-&lt;p&gt;这部分会收录&lt;strong&gt;模电、数集、信号与系统&lt;/strong&gt;等专业课程的推导和理解。不是简单的课本摘抄，而是我自己消化后的版本——哪里容易混淆、哪个公式有巧妙推法、哪道题藏着关键思路，我都会记下来。&lt;/p&gt;
-&lt;h3&gt;技术栈 (Tech Stack)&lt;/h3&gt;
-&lt;p&gt;专门放&lt;strong&gt;解决具体问题的技术&lt;/strong&gt;。比如 Arch Linux 的日常折腾、Linux命令速查、Python脚本实例、Verilog的语法技巧、Vivado/Virtuoso工具的使用教程、还有各种Debug经验。这部分应该会更新得比较频繁，毕竟每天都在踩新坑。&lt;/p&gt;
-&lt;h3&gt;造物志 (Portfolio / Projects)&lt;/h3&gt;
-&lt;p&gt;记录&lt;strong&gt;完整项目的全过程&lt;/strong&gt;。从需求分析、方案设计、代码实现到最后的测试调试，就像写项目日志一样。未来可能会有&quot;自制CPU&quot;、&quot;设计运算放大器&quot;这类项目。虽然现在看起来有点野心勃勃，但总得有个地方放梦想清单不是吗？&lt;/p&gt;
-&lt;h3&gt;论文与前沿 (Paper &amp;amp; Insights)&lt;/h3&gt;
-&lt;p&gt;大二阶段主要会放&lt;strong&gt;论文阅读笔记&lt;/strong&gt;和对行业动态的思考。虽然还没真正参与科研，但读Paper、关注新技术（先进制程、AI芯片架构等）也是必修课。这个板块可能更新慢一些，但会尽量保证质量。&lt;/p&gt;
-&lt;h3&gt;光影与生活 (Visuals &amp;amp; Life)&lt;/h3&gt;
-&lt;p&gt;最轻松的板块，放&lt;strong&gt;摄影作品、平面设计图、生活感悟、书评影评&lt;/strong&gt;。学习累了就来这里发发呆，记录一些日常的小确幸。毕竟除了电路和代码，生活还有很多美好的东西值得记录。&lt;/p&gt;
-&lt;h2&gt;一些碎碎念&lt;/h2&gt;
-&lt;p&gt;建站的过程比想象中复杂，但也比想象中有趣。从配置环境、调整样式，到写第一篇文章，每一步都能学到新东西。虽然现在网站还很简陋，内容也不多，但&lt;strong&gt;重要的是开始&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;我知道自己文笔一般，技术也不够深，很多想法可能还很稚嫩。但我相信&lt;strong&gt;持续记录的力量&lt;/strong&gt;——也许几个月后、一年后、毕业后再回头看，会发现自己已经走了很远。&lt;/p&gt;
-&lt;p&gt;如果你恰好路过这里，欢迎多逛逛，也欢迎留言交流。如果文章里有错误或不严谨的地方，更欢迎指正。&lt;/p&gt;
-&lt;p&gt;最后用经典的一句话作结：&lt;/p&gt;
+&lt;p&gt;为了让内容保持清晰，我暂时将文章分为六个板块。它们并不是严格的学科边界，而是六种不同的记录方式。&lt;/p&gt;
+&lt;h3&gt;格物录&lt;/h3&gt;
+&lt;p&gt;记录数学、电路、信号与系统等基础理论。内容会侧重概念之间的联系、公式推导和容易混淆的细节，尽量写成经过自己理解后仍能复用的版本。&lt;/p&gt;
+&lt;h3&gt;技术札记&lt;/h3&gt;
+&lt;p&gt;收录解决具体问题的方法，例如 Linux 环境、编程语言、Verilog、Vivado、Virtuoso，以及开发和调试过程中值得保留的经验。&lt;/p&gt;
+&lt;h3&gt;造物志&lt;/h3&gt;
+&lt;p&gt;记录完整项目从想法到落地的过程，包括需求、方案、实现、测试和复盘。这里既会展示完成的作品，也会诚实保留设计中的取舍与不足。&lt;/p&gt;
+&lt;h3&gt;观潮集&lt;/h3&gt;
+&lt;p&gt;用于论文阅读、行业观察与前沿技术笔记。关注的方向可能包括集成电路、先进制程、计算架构和人工智能硬件。&lt;/p&gt;
+&lt;h3&gt;浮光记&lt;/h3&gt;
+&lt;p&gt;保存摄影、平面设计、书影音和生活片段。它不强调知识密度，只负责留下那些值得被记住的光影与时刻。&lt;/p&gt;
+&lt;h3&gt;碎碎念&lt;/h3&gt;
+&lt;p&gt;放置建站日志、阶段总结和暂时无法归入其他板块的思考。这些文字可能更轻，也更接近当下。&lt;/p&gt;
+&lt;h2&gt;从这里开始&lt;/h2&gt;
+&lt;p&gt;现在的网站仍在不断调整，内容也只是刚刚起步。以后回头看，这篇文章或许会显得生涩，但它至少标记了一个明确的开始。&lt;/p&gt;
+&lt;p&gt;我会在这里持续记录已经理解的、正在尝试的，以及尚未得到答案的问题。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;print(&quot;Hello, World!&quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;如果你偶然路过，欢迎在评论区留下你的足迹。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;em&gt;Let&apos;s start the journey.&lt;/em&gt;&lt;/p&gt;
-</content:encoded></item><item><title>ChartGenius：我的第一个网页小工具</title><link>https://sline-l.github.io/posts/portfolio/chart-genius/</link><guid isPermaLink="true">https://sline-l.github.io/posts/portfolio/chart-genius/</guid><description>一个用于快速制作与美化图表的 Web 小工具。</description><pubDate>Sat, 13 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;嗨！今天想和大家分享我做的第一个网页端小工具——&lt;strong&gt;ChartGenius&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;工具的入口为：&lt;a href=&quot;https://chart-genius-sooty.vercel.app/&quot;&gt;ChartGenius&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;为什么会做这个工具？&lt;/h2&gt;
-&lt;p&gt;做 ChartGenius 的想法其实源于一个很实际的需求：写实验报告和做课程展示时，我经常需要画各种图表。虽然市面上已经有很多画图工具了，但使用起来要么太复杂（学习成本高），要么美观度不够（配色看着就很&quot;理工直男&quot;），要么就是需要付费才能导出高质量图片。&lt;/p&gt;
-&lt;p&gt;我就在想，能不能做一个简单、快速、好看的图表生成器？最好是打开网页就能用，不需要安装任何软件，也不需要复杂的操作。于是，ChartGenius 就诞生了。&lt;/p&gt;
-&lt;h2&gt;ChartGenius 能做什么？&lt;/h2&gt;
-&lt;p&gt;简单来说，ChartGenius 是一个&lt;strong&gt;快速制作和美化图表的在线工具&lt;/strong&gt;。它的核心功能就是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;快速制作图表&lt;/strong&gt;：几步操作就能生成专业的图表&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;灵活美化&lt;/strong&gt;：一键切换配色方案，实时预览效果&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;即开即用&lt;/strong&gt;：无需注册，打开网页就能用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;功能详解&lt;/h2&gt;
-&lt;h3&gt;丰富的图表类型&lt;/h3&gt;
-&lt;p&gt;ChartGenius 目前支持 &lt;strong&gt;11 种&lt;/strong&gt;常用图表类型，基本能满足日常学习和工作中的大部分需求：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;柱状图 (Bar Chart)&lt;/strong&gt;：最经典的数据对比图表&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;水平柱状图 (Horizontal Bar Chart)&lt;/strong&gt;：当标签文字较长时更适合&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;堆叠柱状图 (Stacked Bar Chart)&lt;/strong&gt;：展示部分与整体的关系&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;百分比堆叠柱状图 (Percentage Stacked Bar Chart)&lt;/strong&gt;：对比各部分的占比&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;直方图 (Histogram)&lt;/strong&gt;：展示数据的分布情况&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;折线图 (Line Chart)&lt;/strong&gt;：展示趋势变化&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;面积图 (Area Chart)&lt;/strong&gt;：强调数值的累积&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;饼图 (Pie Chart)&lt;/strong&gt;：展示各部分的占比关系&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;环形图 (Donut Chart)&lt;/strong&gt;：饼图的变体，视觉上更现代&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;雷达图 (Radar Chart)&lt;/strong&gt;：多维度数据对比&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;箱线图 (Box Plot)&lt;/strong&gt;：展示数据的分布和离散程度&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在选择图表类型后，你还可以自定义：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Groups (X-Axis)&lt;/strong&gt;：横轴的分组数量，比如&quot;一月、二月、三月&quot;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Series (Elements)&lt;/strong&gt;：数据系列数量，比如&quot;销售额、成本、利润&quot;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这样的设计让你能够灵活地适配不同的数据结构。&lt;/p&gt;
-&lt;h3&gt;精心设计的配色方案&lt;/h3&gt;
-&lt;p&gt;好的配色能让图表瞬间提升一个档次。ChartGenius 内置了 &lt;strong&gt;5 套精选配色方案&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Ocean Breeze（海洋微风）&lt;/strong&gt;：清新的蓝绿色系，适合科技、数据类展示&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Sunset Glow（落日余晖）&lt;/strong&gt;：温暖的橙红色系，适合创意、活力类主题&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Neon Forest（霓虹森林）&lt;/strong&gt;：鲜艳的绿色系，适合环保、自然类主题&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Cyberpunk（赛博朋克）&lt;/strong&gt;：炫酷的紫粉色系，适合科幻、前卫类风格&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Slate Mono（石板灰阶）&lt;/strong&gt;：简洁的灰色系，适合商务、正式场合&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;当然，如果这些配色都不满足你的需求，ChartGenius 还支持&lt;strong&gt;自定义配色&lt;/strong&gt;。你可以根据自己的喜好或品牌色调，自由调整每个数据系列的颜色，打造独一无二的图表风格。&lt;/p&gt;
-&lt;p&gt;最重要的是，&lt;strong&gt;切换配色方案是实时的&lt;/strong&gt;——点击一下就能看到效果，不满意就换一个，直到找到最合适的那一款。&lt;/p&gt;
-&lt;h3&gt;灵活的数据处理&lt;/h3&gt;
-&lt;p&gt;ChartGenius 提供了两种数据输入方式：&lt;/p&gt;
-&lt;h4&gt;1. 导入 JSON 数据&lt;/h4&gt;
-&lt;p&gt;如果你已经有现成的数据，可以直接导入 &lt;code&gt;.json&lt;/code&gt; 格式的文件。这对于需要频繁更新数据或者从其他系统导出数据的场景非常方便。&lt;/p&gt;
-&lt;p&gt;JSON 格式大概是这样的：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[  
- { &quot;name&quot;: &quot;A&quot;, &quot;series0&quot;: 70, &quot;series1&quot;: 50 , &quot;series2&quot;: 30},  
- { &quot;name&quot;: &quot;B&quot;, &quot;series0&quot;: 80, &quot;series1&quot;: 60 , &quot;series2&quot;: 20},  
- { &quot;name&quot;: &quot;C&quot;, &quot;series0&quot;: 40, &quot;series1&quot;: 90 , &quot;series2&quot;: 10},  
- { &quot;name&quot;: &quot;D&quot;, &quot;series0&quot;: 60, &quot;series1&quot;: 70 , &quot;series2&quot;: 40},  
- { &quot;name&quot;: &quot;E&quot;, &quot;series0&quot;: 50, &quot;series1&quot;: 80 , &quot;series2&quot;: 30}  
-]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中，name 为 Groups 的名字，series0~series3 为 Series 的名字，均可以自定义。&lt;/p&gt;
-&lt;h4&gt;2. 随机生成数据&lt;/h4&gt;
-&lt;p&gt;如果你只是想快速预览某种图表的效果，或者做一个演示原型，可以使用&lt;strong&gt;随机生成数据&lt;/strong&gt;功能。一键生成，立即可视化，非常适合快速试错和探索不同的图表类型。&lt;/p&gt;
-&lt;h3&gt;一键导出图片&lt;/h3&gt;
-&lt;p&gt;图表做好后，你可以直接&lt;strong&gt;导出为图片&lt;/strong&gt;，然后用在 PPT、报告、论文或者社交媒体上。不需要截图，不需要担心分辨率问题，导出的图片质量足够高，可以直接使用。&lt;/p&gt;
-&lt;h2&gt;适用场景&lt;/h2&gt;
-&lt;p&gt;ChartGenius 可以用在很多地方：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;课程作业和实验报告&lt;/strong&gt;：快速生成专业的数据图表&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;课程展示和答辩&lt;/strong&gt;：制作美观的可视化内容&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;个人项目和博客&lt;/strong&gt;：为文章配图，增强可读性&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;数据探索&lt;/strong&gt;：快速可视化数据，发现趋势和规律&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;技术实现&lt;/h2&gt;
-&lt;p&gt;ChartGenius 是基于 Web 技术开发的，在 gemini 的辅助下完成，主要使用了：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;前端框架&lt;/strong&gt;：构建交互式界面&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;图表库&lt;/strong&gt;：实现各种图表的绘制和渲染&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;整个工具都在浏览器中运行，所以&lt;strong&gt;所有数据都在本地处理&lt;/strong&gt;，不会上传到服务器，可以放心使用。&lt;/p&gt;
-&lt;h2&gt;未来计划&lt;/h2&gt;
-&lt;p&gt;ChartGenius 目前还是一个很基础的版本，未来我计划添加更多功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[ ] 重新设计 Cyberpunk 配色方案&lt;/li&gt;
-&lt;li&gt;[ ] 支持更多图表类型（散点图、热力图等）&lt;/li&gt;
-&lt;li&gt;[ ] 更多风格的图表（手绘、极简等）&lt;/li&gt;
-&lt;li&gt;[ ] 更多默认的配色方案和更丰富的自定义选项&lt;/li&gt;
-&lt;li&gt;[ ] 图表编辑器，支持更细粒度的调整&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果你有什么建议或者想要的功能，欢迎告诉我！&lt;/p&gt;
-&lt;h2&gt;来试试看吧！&lt;/h2&gt;
-&lt;p&gt;这是我的第一个网页小工具，虽然功能还不够完善，但已经可以解决一些实际问题了。如果你也经常需要画图表，不妨试试 ChartGenius，说不定能帮你省下不少时间。&lt;/p&gt;
-&lt;p&gt;希望这个小工具能对你有所帮助。如果你觉得好用，或者发现了什么 Bug，都欢迎反馈给我。一起让它变得更好！&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;em&gt;下次见！&lt;/em&gt;&lt;/p&gt;
-</content:encoded></item><item><title>Ordinary Differential Equation</title><link>https://sline-l.github.io/posts/coretheory/ordinary-differential-equation/</link><guid isPermaLink="true">https://sline-l.github.io/posts/coretheory/ordinary-differential-equation/</guid><description>Introduce some ordinary differential equations</description><pubDate>Mon, 08 Dec 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h4&gt;Separable Equation&lt;/h4&gt;
-&lt;p&gt;For a first-order differential equation of separable variables:&lt;/p&gt;
-&lt;p&gt;$$
-M\left( {x} \right)dx + N\left( {y} \right)dy = 0
-$$&lt;/p&gt;
-&lt;p&gt;Intergrate both ends&lt;/p&gt;
-&lt;p&gt;$$
-\int {M\left( x \right)dx}  + \int {N \left( y \right)dy}  = C
-$$&lt;/p&gt;
-&lt;h4&gt;Homogeneous Equation&lt;/h4&gt;
-&lt;p&gt;For a homogeneous equation&lt;/p&gt;
-&lt;p&gt;$$
-\frac{{dy}}{{dx}} = f\left( {x,y} \right)
-$$&lt;/p&gt;
-&lt;p&gt;$$
-f\left( {tx,ty} \right) = f\left( {x,y} \right)
-$$&lt;/p&gt;
-&lt;p&gt;We let $y=xv$ ，$v=v(x)$, so&lt;/p&gt;
-&lt;p&gt;$$
-\frac{{dy}}{{dx}} = v + x\frac{{dv}}{{dx}}
-$$&lt;/p&gt;
-&lt;p&gt;Also, we can solve&lt;/p&gt;
-&lt;p&gt;$$
-\frac{{dx}}{{dy}} = \frac{1}{{f\left( {x,y} \right)}}
-$$&lt;/p&gt;
-&lt;p&gt;Let $x=yu$&lt;/p&gt;
-&lt;p&gt;$$
-\frac{{dx}}{{dy}} = u + y\frac{{du}}{{dy}}
-$$&lt;/p&gt;
-&lt;p&gt;By simplifying, we can have separable equation.&lt;/p&gt;
-&lt;h4&gt;Exact Equation&lt;/h4&gt;
-&lt;p&gt;For a equation like&lt;/p&gt;
-&lt;p&gt;$$
-M(x,y)dx+N(x,y)dy=0
-$$&lt;/p&gt;
-&lt;p&gt;If there exists a function that satisfies&lt;/p&gt;
-&lt;p&gt;$$
-dg(x,y)=M(x,y)dx+N(x,y)dy
-$$&lt;/p&gt;
-&lt;p&gt;We call it exact equation.&lt;/p&gt;
-&lt;p&gt;ps. If $g(x,y)$ exists, it satisfies&lt;/p&gt;
-&lt;p&gt;$$
-\frac{ \partial M(x,y) }{ \partial y } =\frac{ \partial N(x,y) }{ \partial x }
-$$&lt;/p&gt;
-&lt;p&gt;There exists $g(x, y)$ that satisfie：&lt;/p&gt;
-&lt;p&gt;$$
-\begin{align}
-\frac{{\partial g\left( {x,y} \right)}}{{\partial x}} = M\left( {x,y} \right)\ \frac{{\partial g\left( {x,y} \right)}}{{\partial y}} = N\left( {x,y} \right) \
-\end{align}
-$$&lt;/p&gt;
-&lt;p&gt;For&lt;/p&gt;
-&lt;p&gt;$$
-M\left( {x,y} \right)dx + N\left( {x,y} \right)dy = 0
-$$&lt;/p&gt;
-&lt;p&gt;Thus&lt;/p&gt;
-&lt;p&gt;$$
-\begin{align}
-dg\left( {x,y\left( x \right)} \right)  &amp;amp; = 0 \   \int {dg\left( {x,y\left( x \right)} \right)}   &amp;amp; = \int {0dx}
-\end{align}
-$$&lt;/p&gt;
-&lt;p&gt;We can get&lt;/p&gt;
-&lt;p&gt;$$
-g\left( {x,y} \right) = C
-$$&lt;/p&gt;
-&lt;h4&gt;Linear Equation&lt;/h4&gt;
-&lt;p&gt;For a first-order equation&lt;/p&gt;
-&lt;p&gt;$$
-y&apos;+p(x)y=q(x)
-$$&lt;/p&gt;
-&lt;p&gt;First&lt;/p&gt;
-&lt;p&gt;$$
-[p(x)y-q(x)]dx+dy=0
-$$&lt;/p&gt;
-&lt;p&gt;We will try to change it to exact equation&lt;/p&gt;
-&lt;p&gt;$$
-I(x)[p(x)y-q(x)]dx+I(x)dy=0
-$$&lt;/p&gt;
-&lt;p&gt;Because&lt;/p&gt;
-&lt;p&gt;$$
-\frac{ \partial I(x)[p(x)y-q(x)] }{ \partial y } =\frac{ \partial I(x) }{ \partial x }
-$$&lt;/p&gt;
-&lt;p&gt;Let&lt;/p&gt;
-&lt;p&gt;$$
-I\left( x \right) = {e^{\int {p\left( x \right)dx} }}
-$$&lt;/p&gt;
-&lt;p&gt;Muitioy on both sides&lt;/p&gt;
-&lt;p&gt;$$
-I\left( x \right)y&apos; + p\left( x \right)I\left( x \right)y = I\left( x \right)q\left( x \right)
-$$&lt;/p&gt;
-&lt;p&gt;We can discover&lt;/p&gt;
-&lt;p&gt;$$
-I(x)y&apos;+p(x)I(x)y=\frac{d}{dx} (I(x)y(x))
-$$&lt;/p&gt;
-&lt;p&gt;So&lt;/p&gt;
-&lt;p&gt;$$
-\begin{align}
-&amp;amp; \frac{d}{dx} (I(x)y)  =I(x)q(x) \
-&amp;amp; I(x)y  =\int I(\tau)q(\tau)d\tau+C \
-\end{align}
-$$&lt;/p&gt;
-&lt;p&gt;Finally&lt;/p&gt;
-&lt;p&gt;$$
-y  =\frac{1}{I(x)}\int I(\tau)q(\tau)d\tau+C
-$$&lt;/p&gt;
-&lt;h4&gt;Bernoulli‍ Equation&lt;/h4&gt;
-&lt;p&gt;For a fitst-order equation&lt;/p&gt;
-&lt;p&gt;$$
-\frac{dy}{dx} + P(x)y = Q(x)y^n&lt;/p&gt;
-&lt;p&gt;$$&lt;/p&gt;
-&lt;h2&gt;Second-Order ODE&lt;/h2&gt;
-&lt;h3&gt;Others&lt;/h3&gt;
-&lt;h4&gt;Euler-Cauchy Equation&lt;/h4&gt;
-&lt;p&gt;For a equation like&lt;/p&gt;
-&lt;p&gt;$$
-ax^2y&apos;&apos;+bxy&apos;+cy=0
-$$&lt;/p&gt;
-&lt;h4&gt;Sturm-Liouville Equation&lt;/h4&gt;
-&lt;p&gt;For a equation like&lt;/p&gt;
-&lt;p&gt;$$
-\frac{d}{dx} \left[ p(x) \frac{dy}{dx} \right] + q(x)y + \lambda r(x)y = 0
-$$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Let the journey begin.&lt;/em&gt;&lt;/p&gt;
 </content:encoded></item></channel></rss>
