@@ -650,6 +650,11 @@ function disableAnimation() {
   }
 
   const setup = () => {
+    if (window.__fireflyLayoutHooksInitialized) {
+      return;
+    }
+    window.__fireflyLayoutHooksInitialized = true;
+
     // TODO: temp solution to change the height of the banner
     /*
 	window.swup.hooks.on('animation:out:start', () => {

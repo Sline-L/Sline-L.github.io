@@ -182,7 +182,7 @@ src/
 │   ├── announcementConfig.ts # 公告配置
 │   ├── licenseConfig.ts      # 授權配置
 │   ├── footerConfig.ts       # 頁尾配置
-│   ├── FooterConfig.html     # 頁尾HTML內容
+│   ├── footer-content.html   # 頁尾 HTML 內容
 │   ├── expressiveCodeConfig.ts # 程式碼高亮配置
 │   ├── sakuraConfig.ts       # 櫻花特效配置
 │   ├── fontConfig.ts         # 字型配置

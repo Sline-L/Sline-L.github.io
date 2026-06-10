@@ -202,9 +202,11 @@ export class SakuraManager {
 	private animationId: number | null = null;
 	private img: HTMLImageElement | null = null;
 	private isRunning = false;
+	private readonly resizeHandler: () => void;
 
 	constructor(config: SakuraConfig) {
 		this.config = config;
+		this.resizeHandler = this.handleResize.bind(this);
 	}
 
 	// 初始化樱花特效
@@ -215,7 +217,7 @@ export class SakuraManager {
 
 		// 创建图片对象
 		this.img = new Image();
-		this.img.src = "/sakura.png"; // 使用樱花图片
+		this.img.src = "/assets/images/sakura.png";
 
 		// 等待图片加载完成
 		await new Promise<void>((resolve, reject) => {
@@ -246,7 +248,7 @@ export class SakuraManager {
 		this.ctx = this.canvas.getContext("2d");
 
 		// 监听窗口大小变化
-		window.addEventListener("resize", this.handleResize.bind(this));
+		window.addEventListener("resize", this.resizeHandler);
 	}
 
 	// 创建樱花列表
@@ -328,7 +330,7 @@ export class SakuraManager {
 			this.canvas = null;
 		}
 
-		window.removeEventListener("resize", this.handleResize.bind(this));
+		window.removeEventListener("resize", this.resizeHandler);
 		this.isRunning = false;
 	}
 

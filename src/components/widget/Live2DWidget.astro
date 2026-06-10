@@ -402,10 +402,19 @@ const size = config.size || { width: 280, height: 250 };
   }
 
   // Handle window resize for responsive behavior
-  window.addEventListener("resize", handleResponsive);
+  if (window.__fireflyLive2DResizeHandler) {
+    window.removeEventListener("resize", window.__fireflyLive2DResizeHandler);
+  }
+  window.__fireflyLive2DResizeHandler = handleResponsive;
+  window.addEventListener("resize", window.__fireflyLive2DResizeHandler);
 
   // 监听 Swup 页面切换事件（如果使用了 Swup）
-  if (typeof window.swup !== "undefined" && window.swup.hooks) {
+  if (
+    !window.__fireflyLive2DSwupHookInitialized &&
+    typeof window.swup !== "undefined" &&
+    window.swup.hooks
+  ) {
+    window.__fireflyLive2DSwupHookInitialized = true;
     window.swup.hooks.on("content:replace", () => {
       // 只更新响应式显示，不重新创建模型
       setTimeout(() => {
@@ -414,15 +423,27 @@ const size = config.size || { width: 280, height: 250 };
     });
   } else {
     // 如果 Swup 还未加载，监听启用事件
-    document.addEventListener("swup:enable", () => {
+    if (window.__fireflyLive2DSwupEnableHandler) {
+      document.removeEventListener(
+        "swup:enable",
+        window.__fireflyLive2DSwupEnableHandler
+      );
+    }
+    window.__fireflyLive2DSwupEnableHandler = () => {
       if (window.swup && window.swup.hooks) {
+        if (window.__fireflyLive2DSwupHookInitialized) return;
+        window.__fireflyLive2DSwupHookInitialized = true;
         window.swup.hooks.on("content:replace", () => {
           setTimeout(() => {
             handleResponsive();
           }, 100);
         });
       }
-    });
+    };
+    document.addEventListener(
+      "swup:enable",
+      window.__fireflyLive2DSwupEnableHandler
+    );
   }
 </script>
 

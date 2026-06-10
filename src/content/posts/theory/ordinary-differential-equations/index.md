@@ -1,12 +1,11 @@
 ---
 title: Ordinary Differential Equation
-date: 2025-10-12
 published: 2025-12-08
 pinned: false
-description: "Introduce some ordinary differential equations"
-tags: ["ODE", "Mathematics", "ClassNotes"]
-category: ClassNotes
-draft: false
+description: 常微分方程的基本类型、求解方法与推导笔记。
+tags: [数学, 常微分方程]
+category: 格物录
+draft: true
 ---
 
 #### Separable Equation

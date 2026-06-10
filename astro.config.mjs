@@ -17,7 +17,7 @@ import remarkGithubAdmonitionsToDirectives from "remark-github-admonitions-to-di
 import remarkMath from "remark-math";
 import remarkSectionize from "remark-sectionize";
 import { expressiveCodeConfig, siteConfig } from "./src/config";
-import searchIndexer from "./src/integrations/searchIndex.mts";
+import searchIndexer from "./src/integrations/search-index.mts";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
 import { pluginLanguageBadge } from "./src/plugins/expressive-code/language-badge.ts";
 import { AdmonitionComponent } from "./src/plugins/rehype-component-admonition.mjs";
@@ -36,6 +36,12 @@ export default defineConfig({
 
 	base: "/",
 	trailingSlash: "always",
+	redirects: {
+		"/posts/helloworld": "/posts/essays/hello-world",
+		"/posts/Portfolio/chart-genius": "/posts/projects/chart-genius",
+		"/posts/CoreTheory/Ordinary Differential Equation":
+			"/posts/theory/ordinary-differential-equations",
+	},
 	integrations: [
 		tailwind({
 			nesting: true,

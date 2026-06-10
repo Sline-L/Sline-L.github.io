@@ -1,14 +1,14 @@
-import { execSync } from "node:child_process";
 import type { AstroIntegration } from "astro";
+import { close, createIndex } from "pagefind";
+import MeiliSearchIndexer from "../../scripts/index-to-meilisearch.mts";
 import { navBarSearchConfig } from "../config/index.ts";
-import MeiliSearchIndexer from "../scripts/index-to-meilisearch.mts";
 import { NavBarSearchMethod } from "../types/config.ts";
 
 /**
  * Astro 集成，用于在构建结束时运行 Search 索引器
  * @returns AstroIntegration
  */
-export default function searchIndexer() {
+export default function searchIndexer(): AstroIntegration {
 	const data: AstroIntegration = {
 		name: "search-indexer",
 		hooks: {
@@ -31,13 +31,39 @@ export default function searchIndexer() {
 					await indexer.main();
 				} else if (navBarSearchConfig.method === NavBarSearchMethod.PageFind) {
 					console.log("Running Pagefind Indexer...");
+					const { errors: createErrors, index } = await createIndex({
+						excludeSelectors: [
+							"span.katex",
+							"span.katex-display",
+							"[data-pagefind-ignore]",
+							".search-panel",
+							"#search-panel",
+						],
+					});
+					if (createErrors.length > 0 || !index) {
+						throw new Error(
+							`Pagefind initialization failed:\n${createErrors.join("\n")}`,
+						);
+					}
 					try {
-						execSync("pagefind --site dist", {
-							encoding: "utf-8",
-							stdio: "inherit",
+						const directoryResult = await index.addDirectory({
+							path: "dist",
 						});
-					} catch (error) {
-						console.error("Pagefind Index Failed:", error.message);
+						if (directoryResult.errors.length > 0) {
+							throw new Error(directoryResult.errors.join("\n"));
+						}
+
+						const writeResult = await index.writeFiles({
+							outputPath: "dist/pagefind",
+						});
+						if (writeResult.errors.length > 0) {
+							throw new Error(writeResult.errors.join("\n"));
+						}
+						console.log(
+							`Pagefind indexed ${directoryResult.page_count} page(s).`,
+						);
+					} finally {
+						await close();
 					}
 				}
 				console.log(`${"=".repeat(10)}Search Indexer Done.${"=".repeat(10)}`);

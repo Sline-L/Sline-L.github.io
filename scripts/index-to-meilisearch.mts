@@ -4,7 +4,7 @@ import { pathToFileURL } from "node:url";
 import { glob } from "glob";
 import matter from "gray-matter";
 import { MeiliSearch } from "meilisearch";
-import { navBarSearchConfig } from "../config/index.ts";
+import { navBarSearchConfig } from "../src/config/index.ts";
 
 class MeiliSearchIndexer {
 	private client: MeiliSearch;

@@ -182,7 +182,7 @@ src/
 │   ├── announcementConfig.ts # Announcement configuration
 │   ├── licenseConfig.ts      # License configuration
 │   ├── footerConfig.ts       # Footer configuration
-│   ├── FooterConfig.html     # Footer HTML content
+│   ├── footer-content.html   # Footer HTML content
 │   ├── expressiveCodeConfig.ts # Code highlighting configuration
 │   ├── sakuraConfig.ts       # Sakura effect configuration
 │   ├── fontConfig.ts         # Font configuration

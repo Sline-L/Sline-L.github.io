@@ -34,7 +34,7 @@
 用于展示内容的组件，如文章卡片、元数据等。
 
 - `PostCard.astro` - 文章卡片组件
-- `PostMeta.astro` - 文章元数据组件
+- `PostMetadata.astro` - 文章元数据组件
 - `TypewriterText.astro` - 打字机效果文本组件
 - `StatCard.astro` - 统计卡片组件
 - `Profile.astro` - 个人资料组件
@@ -124,4 +124,3 @@ Bangumi 番组追踪页面的相关组件，用于展示和管理用户的动漫
 8. **pages/** - 页面特定组件
 9. **effects/** - 页面特效和动画
 ---
-

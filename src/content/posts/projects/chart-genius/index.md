@@ -1,12 +1,11 @@
 ---
 title: ChartGenius：我的第一个网页小工具
-date: 2025-12-13
 published: 2025-12-13
 pinned: false
 description: 一个用于快速制作与美化图表的 Web 小工具。
-tags: ["WebTool"]
+tags: [Web, 工具, 数据可视化]
 category: 造物志
-draft: false
+draft: true
 ---
 
 嗨！今天想和大家分享我做的第一个网页端小工具——**ChartGenius**。

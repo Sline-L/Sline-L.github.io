@@ -11,7 +11,7 @@ description: "与优秀的朋友们一起成长"
 
 ```yaml
 站点名称: Slineの小站
-站点描述: 飞萤之火自无梦的长夜亮起，绽放在终竟的明天。
+站点描述: Weaving logic on silicon, capturing light in time.
 站点链接: https://Sline-L.github.io
 头像链接: https://sline-public.oss-cn-shanghai.aliyuncs.com/image_hosting/WallPaper/12.png
 

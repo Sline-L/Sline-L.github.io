@@ -3,10 +3,34 @@
 ---
 
 <script>
-import { Fancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+type FancyboxModule = typeof import("@fancyapps/ui");
 
-function initFancybox() {
+let fancyboxModulePromise: Promise<FancyboxModule> | null = null;
+
+function hasFancyboxTargets(): boolean {
+  return document.querySelector(
+    ".custom-md img, #post-cover img, .moment-images img, [data-fancybox]"
+  ) !== null;
+}
+
+async function loadFancybox(): Promise<FancyboxModule | null> {
+  if (!hasFancyboxTargets()) return null;
+
+  if (!fancyboxModulePromise) {
+    fancyboxModulePromise = Promise.all([
+      import("@fancyapps/ui"),
+      import("@fancyapps/ui/dist/fancybox/fancybox.css"),
+    ]).then(([module]) => module);
+  }
+
+  return fancyboxModulePromise;
+}
+
+async function initFancybox(): Promise<void> {
+  const module = await loadFancybox();
+  if (!module) return;
+  const { Fancybox } = module;
+
   // 销毁现有的 Fancybox 实例（如果存在）
   Fancybox.close();
   
@@ -182,15 +206,18 @@ function initFancybox() {
 }
 
 const setup = () => {
+  if (window.__fireflyFancyboxSwupHookInitialized) return;
+  window.__fireflyFancyboxSwupHookInitialized = true;
+
   // 初始化 Fancybox
-  initFancybox();
+  void initFancybox();
   
   // 在页面视图更改时重新初始化
   if (window.swup) {
     window.swup.hooks.on("page:view", () => {
       // 等待 DOM 更新后初始化
       setTimeout(() => {
-        initFancybox();
+        void initFancybox();
       }, 100);
     });
   }
@@ -203,9 +230,11 @@ if (window.swup) {
   
   // 如果 swup 尚未初始化，则直接初始化
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initFancybox);
+    document.addEventListener("DOMContentLoaded", () => void initFancybox(), {
+      once: true,
+    });
   } else {
-    initFancybox();
+    void initFancybox();
   }
 }
 </script>

@@ -72,9 +72,8 @@ let links: NavBarLink[] = navBarConfig.links.map(
             })}
         </div>
         <div class:list={["flex", navbarWidthFull ? "ml-auto" : ""]}>
-            <!--<SearchPanel client:load>-->
             <Search
-                client:load
+                client:idle
                 searchMethod={navBarSearchConfig.method}
                 meiliSearchConfig={navBarSearchConfig.meiliSearchConfig}
             />

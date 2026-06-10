@@ -9,12 +9,12 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"type-check": "tsc --noEmit --isolatedDeclarations",
+		"type-check": "tsc --noEmit",
 		"new-post": "node scripts/new-post.js",
 		"format": "biome format --write ./src",
 		"lint": "biome check --write ./src",
 		"preinstall": "npx only-allow pnpm",
-		"index:meili": "npx tsx src/scripts/index-to-meilisearch.mts"
+		"index:meili": "npx tsx scripts/index-to-meilisearch.mts"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.6",
@@ -84,5 +84,9 @@
 		"postcss-import": "^16.1.1",
 		"postcss-nesting": "^13.0.2"
 	},
-	"packageManager": "pnpm@9.14.4"
+	"packageManager": "pnpm@9.14.4",
+	"engines": {
+		"node": ">=20 <=22",
+		"pnpm": ">=9 <10"
+	}
 }

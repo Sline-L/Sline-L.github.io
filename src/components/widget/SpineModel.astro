@@ -123,6 +123,11 @@ import MessageBox from "./PioMessageBox.astro";
       window.spinePlayerInstance = null;
     }
 
+    if (window.__fireflySpineIdleInterval) {
+      clearInterval(window.__fireflySpineIdleInterval);
+      window.__fireflySpineIdleInterval = undefined;
+    }
+
     // 清理容器内容
     const playerContainer = document.getElementById("spine-player-container");
     if (playerContainer) {
@@ -313,7 +318,10 @@ import MessageBox from "./PioMessageBox.astro";
 
               // 设置待机动画循环
               if (spineModelConfig.interactive.idleAnimations.length > 1) {
-                setInterval(() => {
+                if (window.__fireflySpineIdleInterval) {
+                  clearInterval(window.__fireflySpineIdleInterval);
+                }
+                window.__fireflySpineIdleInterval = setInterval(() => {
                   try {
                     const idleAnims =
                       spineModelConfig.interactive.idleAnimations;
@@ -367,11 +375,25 @@ import MessageBox from "./PioMessageBox.astro";
     }
   }
 
-  // 监听页面卸载事件，清理资源
-  window.addEventListener("beforeunload", cleanupSpineModel);
+  if (window.__fireflySpineBeforeUnloadHandler) {
+    window.removeEventListener(
+      "beforeunload",
+      window.__fireflySpineBeforeUnloadHandler
+    );
+  }
+  window.__fireflySpineBeforeUnloadHandler = cleanupSpineModel;
+  window.addEventListener(
+    "beforeunload",
+    window.__fireflySpineBeforeUnloadHandler
+  );
 
   // 监听 Swup 页面切换事件（如果使用了 Swup）
-  if (typeof window.swup !== "undefined" && window.swup.hooks) {
+  if (
+    !window.__fireflySpineSwupHookInitialized &&
+    typeof window.swup !== "undefined" &&
+    window.swup.hooks
+  ) {
+    window.__fireflySpineSwupHookInitialized = true;
     window.swup.hooks.on("content:replace", () => {
       // 只更新响应式显示，不重新创建模型
       setTimeout(() => {
@@ -381,14 +403,22 @@ import MessageBox from "./PioMessageBox.astro";
   }
 
   // 监听 popstate 事件（浏览器前进后退）
-  window.addEventListener("popstate", () => {
+  if (window.__fireflySpinePopstateHandler) {
+    window.removeEventListener("popstate", window.__fireflySpinePopstateHandler);
+  }
+  window.__fireflySpinePopstateHandler = () => {
     setTimeout(() => {
       updateResponsiveDisplay();
     }, 100);
-  });
+  };
+  window.addEventListener("popstate", window.__fireflySpinePopstateHandler);
 
   // 监听窗口大小变化
-  window.addEventListener("resize", updateResponsiveDisplay);
+  if (window.__fireflySpineResizeHandler) {
+    window.removeEventListener("resize", window.__fireflySpineResizeHandler);
+  }
+  window.__fireflySpineResizeHandler = updateResponsiveDisplay;
+  window.addEventListener("resize", window.__fireflySpineResizeHandler);
 
   // 页面加载完成后初始化（只初始化一次）
   if (document.readyState === "loading") {

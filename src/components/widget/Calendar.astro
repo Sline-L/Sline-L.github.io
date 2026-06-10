@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/siteConfig";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import { getSortedPosts } from "@/utils/content-utils";
+import { getPostUrlBySlug } from "@/utils/url-utils";
 import WidgetLayout from "./WidgetLayout.astro";
 
 interface Props {
@@ -23,13 +24,13 @@ posts.forEach((post) => {
 	const existingPosts = postDateMap.get(dateKey) || [];
 	postDateMap.set(dateKey, [
 		...existingPosts,
-		{ id: post.id, title: post.data.title },
+		{ id: getPostUrlBySlug(post.id), title: post.data.title },
 	]);
 });
 
 // 序列化所有文章数据供客户端使用
 const allPostsData = posts.map((post) => ({
-	id: post.id,
+	id: getPostUrlBySlug(post.id),
 	title: post.data.title,
 	published: post.data.published.getTime(),
 }));
@@ -198,7 +199,7 @@ const currentLang = siteConfig.lang || "en";
     
     if (postsList) {
       postsList.innerHTML = currentMonthPosts.map(post => `
-        <a href="/posts/${post.id}/" class="block text-sm text-neutral-700 dark:text-neutral-300 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] transition-colors truncate px-2 py-1 rounded hover:bg-[var(--btn-plain-bg-hover)]">
+        <a href="${post.id}" class="block text-sm text-neutral-700 dark:text-neutral-300 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] transition-colors truncate px-2 py-1 rounded hover:bg-[var(--btn-plain-bg-hover)]">
           ${post.title}
         </a>
       `).join('');
@@ -249,7 +250,7 @@ const currentLang = siteConfig.lang || "en";
         if (posts.length > 0 && postsList) {
           // 渲染文章列表
           postsList.innerHTML = posts.map(post => `
-            <a href="/posts/${post.id}/" class="block text-sm text-neutral-700 dark:text-neutral-300 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] transition-colors truncate px-2 py-1 rounded hover:bg-[var(--btn-plain-bg-hover)]">
+            <a href="${post.id}" class="block text-sm text-neutral-700 dark:text-neutral-300 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] transition-colors truncate px-2 py-1 rounded hover:bg-[var(--btn-plain-bg-hover)]">
               ${post.title}
             </a>
           `).join('');
@@ -271,16 +272,33 @@ const currentLang = siteConfig.lang || "en";
   const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
   const msUntilMidnight = tomorrow.getTime() - now.getTime();
   
-  setTimeout(() => {
+  if (window.__fireflyCalendarMidnightTimeout) {
+    clearTimeout(window.__fireflyCalendarMidnightTimeout);
+  }
+  if (window.__fireflyCalendarDailyInterval) {
+    clearInterval(window.__fireflyCalendarDailyInterval);
+  }
+  window.__fireflyCalendarMidnightTimeout = setTimeout(() => {
     renderCalendar();
-    // 之后每24小时更新一次
-    setInterval(renderCalendar, 24 * 60 * 60 * 1000);
+    window.__fireflyCalendarDailyInterval = setInterval(
+      renderCalendar,
+      24 * 60 * 60 * 1000
+    );
   }, msUntilMidnight);
 
-  // 页面切换时重新渲染
-  document.addEventListener("swup:contentReplaced", () => {
+  if (window.__fireflyCalendarSwupHandler) {
+    document.removeEventListener(
+      "swup:contentReplaced",
+      window.__fireflyCalendarSwupHandler
+    );
+  }
+  window.__fireflyCalendarSwupHandler = () => {
     setTimeout(renderCalendar, 100);
-  });
+  };
+  document.addEventListener(
+    "swup:contentReplaced",
+    window.__fireflyCalendarSwupHandler
+  );
 </script>
 
 <style>

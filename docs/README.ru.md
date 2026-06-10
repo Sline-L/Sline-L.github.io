@@ -182,7 +182,7 @@ src/
 │   ├── announcementConfig.ts # Конфигурация объявлений
 │   ├── licenseConfig.ts      # Конфигурация лицензии
 │   ├── footerConfig.ts       # Конфигурация подвала
-│   ├── FooterConfig.html     # HTML-контент подвала
+│   ├── footer-content.html   # HTML-контент подвала
 │   ├── expressiveCodeConfig.ts # Конфигурация подсветки кода
 │   ├── sakuraConfig.ts       # Конфигурация эффекта сакуры
 │   ├── fontConfig.ts         # Конфигурация шрифтов

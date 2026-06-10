@@ -9,6 +9,16 @@ export function removeFileExtension(id: string): string {
 	return id.replace(/\.(md|mdx|markdown)$/i, "");
 }
 
+/**
+ * 将内容集合 ID 转为公开文章 slug。
+ * 独立文章目录中的 index.md 映射到目录本身，避免 URL 末尾出现 /index/。
+ */
+export function getPostSlug(id: string): string {
+	return removeFileExtension(id)
+		.replace(/(^|\/)index$/i, "")
+		.replace(/\/$/, "");
+}
+
 export function pathsEqual(path1: string, path2: string) {
 	const normalizedPath1 = path1.replace(/^\/|\/$/g, "").toLowerCase();
 	const normalizedPath2 = path2.replace(/^\/|\/$/g, "").toLowerCase();
@@ -21,9 +31,7 @@ function joinUrl(...parts: string[]): string {
 }
 
 export function getPostUrlBySlug(slug: string): string {
-	// 移除文件扩展名（如 .md, .mdx 等）
-	const slugWithoutExt = removeFileExtension(slug);
-	return url(`/posts/${slugWithoutExt}/`);
+	return url(`/posts/${getPostSlug(slug)}/`);
 }
 
 export function getTagUrl(tag: string): string {

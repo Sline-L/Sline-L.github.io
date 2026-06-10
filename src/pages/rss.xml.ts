@@ -4,6 +4,7 @@ import rss from "@astrojs/rss";
 import type { APIContext, ImageMetadata } from "astro";
 import { parse as htmlParser } from "node-html-parser";
 import { getSortedPosts } from "@/utils/content-utils";
+import { getPostUrlBySlug } from "@/utils/url-utils";
 import { siteConfig } from "../config";
 
 // Build regex pattern for control characters programmatically to avoid lint warnings
@@ -44,7 +45,9 @@ const imagesGlob = import.meta.glob<{ default: ImageMetadata }>(
 
 // Helper function to extract post directory
 function getPostDirectory(postId: string): string {
-	return postId.includes("/") ? postId.split("/")[0] : "";
+	const normalizedId = postId.replace(/\\/g, "/");
+	const lastSlashIndex = normalizedId.lastIndexOf("/");
+	return lastSlashIndex >= 0 ? normalizedId.slice(0, lastSlashIndex) : "";
 }
 
 // Helper function to build image import path
@@ -164,7 +167,7 @@ export async function GET(context: APIContext) {
 			title: sanitizeXmlContent(post.data.title),
 			description: sanitizeXmlContent(post.data.description || ""),
 			pubDate: post.data.published,
-			link: `/posts/${post.id}/`,
+			link: getPostUrlBySlug(post.id),
 			// content:encoded should contain HTML but must be XML-safe
 			content: sanitizeHtmlForXml(
 				sanitizeHtml(html.toString(), {

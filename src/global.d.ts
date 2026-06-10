@@ -10,6 +10,21 @@ declare global {
 		swup: any;
 		live2dModelInitialized?: boolean;
 		spineModelInitialized?: boolean;
+		__fireflyLayoutHooksInitialized?: boolean;
+		__fireflySiteStatsInterval?: ReturnType<typeof setInterval>;
+		__fireflySiteStatsSwupHandler?: EventListener;
+		__fireflyCalendarMidnightTimeout?: ReturnType<typeof setTimeout>;
+		__fireflyCalendarDailyInterval?: ReturnType<typeof setInterval>;
+		__fireflyCalendarSwupHandler?: EventListener;
+		__fireflySpineIdleInterval?: ReturnType<typeof setInterval>;
+		__fireflySpineBeforeUnloadHandler?: EventListener;
+		__fireflySpineSwupHookInitialized?: boolean;
+		__fireflySpinePopstateHandler?: EventListener;
+		__fireflySpineResizeHandler?: EventListener;
+		__fireflyLive2DResizeHandler?: EventListener;
+		__fireflyLive2DSwupHookInitialized?: boolean;
+		__fireflyLive2DSwupEnableHandler?: EventListener;
+		__fireflyFancyboxSwupHookInitialized?: boolean;
 		// biome-ignore lint/suspicious/noExplicitAny: External library
 		spinePlayerInstance?: any;
 		pagefind: {

@@ -15,6 +15,7 @@ src/config/
 ├── announcementConfig.ts # 公告配置
 ├── licenseConfig.ts      # 许可证配置
 ├── footerConfig.ts       # 页脚配置
+├── footer-content.html   # 自定义页脚 HTML
 ├── expressiveCodeConfig.ts # 代码高亮配置
 ├── fontConfig.ts         # 字体配置
 ├── sidebarConfig.ts      # 侧边栏配置
@@ -48,6 +49,7 @@ import { profileConfig } from '../config/profileConfig';
 - `announcementConfig.ts` - 公告配置（标题、内容、链接等）
 - `licenseConfig.ts` - 许可证配置（CC 协议等）
 - `footerConfig.ts` - 页脚配置（HTML 注入等）
+- `footer-content.html` - 启用页脚 HTML 注入后显示的自定义内容
 - `expressiveCodeConfig.ts` - 代码高亮配置（主题等）
 - `fontConfig.ts` - 字体配置（字体族、大小等）
 - `sidebarConfig.ts` - 侧边栏配置（组件布局等）

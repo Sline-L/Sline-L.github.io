@@ -182,7 +182,7 @@ src/
 │   ├── announcementConfig.ts # お知らせ設定
 │   ├── licenseConfig.ts      # ライセンス設定
 │   ├── footerConfig.ts       # フッター設定
-│   ├── FooterConfig.html     # フッターHTMLコンテンツ
+│   ├── footer-content.html   # フッター HTML コンテンツ
 │   ├── expressiveCodeConfig.ts # コードハイライト設定
 │   ├── sakuraConfig.ts       # 桜エフェクト設定
 │   ├── fontConfig.ts         # フォント設定

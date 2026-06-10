@@ -166,6 +166,7 @@ const config = sakuraConfig;
 				this.animationId = null;
 				this.img = null;
 				this.isRunning = false;
+				this.resizeHandler = this.handleResize.bind(this);
 			}
 
 			// 初始化樱花特效
@@ -203,7 +204,7 @@ const config = sakuraConfig;
 				this.ctx = this.canvas.getContext('2d');
 
 				// 监听窗口大小变化
-				window.addEventListener('resize', this.handleResize.bind(this));
+				window.addEventListener('resize', this.resizeHandler);
 			}
 
 			// 创建樱花列表
@@ -285,7 +286,7 @@ const config = sakuraConfig;
 					this.canvas = null;
 				}
 
-				window.removeEventListener('resize', this.handleResize.bind(this));
+				window.removeEventListener('resize', this.resizeHandler);
 				this.isRunning = false;
 			}
 

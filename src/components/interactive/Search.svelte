@@ -20,7 +20,39 @@ let result: SearchResult[] = [];
 let isSearching = false;
 let initialized = false;
 let meiliClient: MeiliSearch | null = null;
-let debounceTimer: NodeJS.Timeout;
+let debounceTimer: ReturnType<typeof setTimeout> | undefined;
+
+const escapeHtml = (value: string): string =>
+	value
+		.replaceAll("&", "&amp;")
+		.replaceAll("<", "&lt;")
+		.replaceAll(">", "&gt;")
+		.replaceAll('"', "&quot;")
+		.replaceAll("'", "&#39;");
+
+// Search providers return highlighted fragments as HTML. Normalize all opening
+// mark tags and escape everything else before rendering with {@html}.
+const sanitizeHighlight = (value: unknown): string => {
+	if (typeof value !== "string") return "";
+
+	const normalized = value
+		.replace(/<mark(?:\s+[^>]*)?>/gi, "\u0000MARK_OPEN\u0000")
+		.replace(/<\/mark\s*>/gi, "\u0000MARK_CLOSE\u0000");
+
+	return escapeHtml(normalized)
+		.replaceAll("\u0000MARK_OPEN\u0000", "<mark>")
+		.replaceAll("\u0000MARK_CLOSE\u0000", "</mark>");
+};
+
+const normalizeSearchResult = (item: SearchResult): SearchResult => ({
+	...item,
+	url: typeof item.url === "string" ? item.url : formatUrl("/"),
+	meta: {
+		title: sanitizeHighlight(item.meta?.title),
+	},
+	excerpt: sanitizeHighlight(item.excerpt),
+	content: item.content ? sanitizeHighlight(item.content) : undefined,
+});
 
 // --- Mocks for Dev Mode ---
 const fakeResult: SearchResult[] = [
@@ -120,7 +152,7 @@ const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 				}
 			}
 
-			result = searchResults;
+			result = searchResults.map(normalizeSearchResult);
 			setPanelVisibility(true, isDesktop);
 		} catch (error) {
 			console.error("Search error:", error);
@@ -134,6 +166,8 @@ const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
 
 // --- Initialization onMount ---
 onMount(() => {
+	let pagefindReadyHandler: (() => void) | undefined;
+
 	if (searchMethod === NavBarSearchMethod.MeiliSearch) {
 		try {
 			meiliClient = new MeiliSearch({
@@ -151,6 +185,7 @@ onMount(() => {
 			if (keywordDesktop) search(keywordDesktop, true);
 			if (keywordMobile) search(keywordMobile, false);
 		};
+		pagefindReadyHandler = initializePagefind;
 
 		if (import.meta.env.DEV) {
 			console.log("Pagefind mock enabled in development mode.");
@@ -170,6 +205,16 @@ onMount(() => {
 			}
 		}
 	}
+
+	return () => {
+		if (debounceTimer) {
+			clearTimeout(debounceTimer);
+		}
+		if (pagefindReadyHandler) {
+			document.removeEventListener("pagefindready", pagefindReadyHandler);
+			document.removeEventListener("pagefindloaderror", pagefindReadyHandler);
+		}
+	};
 });
 
 // --- Reactive Statements ---
@@ -234,7 +279,7 @@ top-20 left-4 md:left-[unset] right-4 shadow-2xl rounded-2xl p-2">
                     <Icon icon="fa6-solid:chevron-right"
                           class="transition text-[0.75rem] translate-x-1 my-auto text-[var(--primary)]"></Icon>
                 </div>
-                {#if item.excerpt.includes('<mark>')}
+                {#if item.excerpt?.includes('<mark>')}
                     <div class="transition text-sm text-50" style="display: flex; align-items: flex-start; margin-top: 0.1rem">
                         <span style="display: inline-block; background-color: var(--btn-plain-bg-hover); color: var(--primary); padding: 0.1em 0.4em; border-radius: 5px; font-size: 0.75em; font-weight: 600; margin-right: 0.5em; flex-shrink: 0;">
                             摘要
