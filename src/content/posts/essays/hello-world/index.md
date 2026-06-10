@@ -4,7 +4,7 @@ published: 2025-12-13
 updated: 2026-06-10
 description: 关于这座个人小站的由来、内容规划，以及我为什么选择在这里持续记录。
 pinned: true
-tags: [建站, Astro, 随笔]
+tags: [随笔]
 category: 碎碎念
 draft: false
 ---

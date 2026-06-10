@@ -47,15 +47,16 @@ function formatNumber(num: number): string {
 	return num.toLocaleString();
 }
 
-// 获取最新文章日期（用于客户端计算）
-const latestPost = posts.reduce((latest, post) => {
-	if (!latest) return post;
-	return post.data.published > latest.data.published ? post : latest;
-}, posts[0]);
+// 文章发布或更新都视为站点活动
+const lastActivityDate = posts.reduce<Date | null>((latest, post) => {
+	const activityDate =
+		post.data.updated && post.data.updated > post.data.published
+			? post.data.updated
+			: post.data.published;
+	return !latest || activityDate > latest ? activityDate : latest;
+}, null);
 
-const lastPostDate = latestPost
-	? latestPost.data.published.toISOString()
-	: null;
+const lastPostDate = lastActivityDate?.toISOString() ?? null;
 
 const stats = [
 	{
@@ -129,27 +130,52 @@ const stats = [
 </WidgetLayout>
 
 <script is:inline define:vars={{ siteStartDate, lastPostDate }}>
+  function getCalendarDayNumber(date) {
+    return Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) /
+      (1000 * 60 * 60 * 24);
+  }
+
+  function parseLocalDate(dateString) {
+    const dateOnlyMatch = dateString.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!dateOnlyMatch) {
+      return new Date(dateString);
+    }
+
+    return new Date(
+      Number(dateOnlyMatch[1]),
+      Number(dateOnlyMatch[2]) - 1,
+      Number(dateOnlyMatch[3])
+    );
+  }
+
   function updateDynamicStats() {
     const today = new Date();
+    const todayDay = getCalendarDayNumber(today);
     
     // 更新运行天数
-    const startDate = new Date(siteStartDate);
-    const diffTime = Math.abs(today.getTime() - startDate.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const startDate = parseLocalDate(siteStartDate);
+    const diffDays = Math.max(
+      0,
+      todayDay - getCalendarDayNumber(startDate) + 1
+    );
     
-    const runningDaysElement = document.querySelector('[data-stat-id="running-days"]');
-    if (runningDaysElement) {
+    for (const runningDaysElement of document.querySelectorAll(
+      '[data-stat-id="running-days"]'
+    )) {
       runningDaysElement.textContent = diffDays.toString();
     }
     
     // 更新最后活动时间
     if (lastPostDate) {
       const lastPost = new Date(lastPostDate);
-      const timeSinceLastPost = Math.abs(today.getTime() - lastPost.getTime());
-      const daysSinceLastUpdate = Math.floor(timeSinceLastPost / (1000 * 60 * 60 * 24));
+      const daysSinceLastUpdate = Math.max(
+        0,
+        todayDay - getCalendarDayNumber(lastPost)
+      );
       
-      const lastUpdateElement = document.querySelector('[data-stat-id="last-update"]');
-      if (lastUpdateElement) {
+      for (const lastUpdateElement of document.querySelectorAll(
+        '[data-stat-id="last-update"]'
+      )) {
         lastUpdateElement.textContent = daysSinceLastUpdate.toString();
       }
     }
